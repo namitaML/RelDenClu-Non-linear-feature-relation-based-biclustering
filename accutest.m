@@ -1,7 +1,4 @@
-% if (sum(res==X)<sum(~res==X))
-%     res=~res;
-% end;
-
+% Find accuracy for a bicluster
 accuracy=sum(res==X)/n;
 precision=sum(res.*X)/sum(res);
 recall=sum(res.*X)/sum(X);

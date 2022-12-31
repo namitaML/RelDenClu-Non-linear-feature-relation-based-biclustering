@@ -20,11 +20,3 @@ perfMat(i,6)=negacc;
 
 find(cludim(i,:));
 end;
-% ma
-% maccuid
-% 
-% res=clubase(maccuid,:)';
-% accutest
-% 
-% sum(clubase(maccuid,:))
-% sum(cludim(maccuid,:))
