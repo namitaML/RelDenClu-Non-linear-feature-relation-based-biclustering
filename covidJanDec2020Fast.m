@@ -36,7 +36,7 @@ n=temp(1);
 m=temp(2);
 d=norm1(d);
 
-[clubase, cludim]=RelDenClu(d, 15, floor(m/3));
+[clubase, cludim]=RelDenClu(d);
 cd=logical(cludim);
 
 %Load WDI column names
