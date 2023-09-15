@@ -53,15 +53,21 @@ end;
 
 
 mkdir('./data/basedata')
+chdir('./data/basedata');
 n=1000;
 m=20;
 u=500;
 v=10;
 for i =1:10
+chdir('../..');
 datagen2;
-fname=strcat('./data/basedata/dbase',num2str(i),'.txt');
+chdir('./data/basedata');
+fname=strcat('dbase',num2str(i),'.txt');
 save(fname,'d', '-ascii')
 end;
+chdir('../..');
+
+
 
 %Code for generating scaled data-Table 1, Row 4
 mkdir('./data/scaledata')
