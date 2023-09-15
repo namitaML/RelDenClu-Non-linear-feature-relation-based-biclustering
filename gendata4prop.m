@@ -117,40 +117,6 @@ save(fname,'d', '-ascii')
 end;
 chdir('../..');
 
-%Code for generating data after applying square transform-Table 1, Row 7
-mkdir('./data/squarelocal')
-chdir('./data/squarelocal');
-n=1000;
-m=20;
-u=500;
-v=10;
-
-for i =1:10
-fname=strcat('../basedata/dbase', num2str(i),'.txt');
-d=load(fname);
-d=d.^2;
-fname=strcat('squarelocal',num2str(i),'.txt');
-save(fname,'d', '-ascii')
-end;
-chdir('../..');
-
-%Code for genearting data after exponential transform-Table 1, Row 8
-
-mkdir('./data/explocal')
-chdir('./data/explocal');
-n=1000;
-m=20;
-u=500;
-v=10;
-
-for i =1:10
-fname=strcat('../basedata/dbase', num2str(i),'.txt');
-d=load(fname);
-d=exp(d);
-fname=strcat('exp',num2str(i),'.txt');
-save(fname,'d', '-ascii')
-end;
-chdir('../..');
 
 
 %Code for genearting point proportion data-Table 1, Row 9
@@ -265,21 +231,3 @@ chdir('../..');
 
 
 
-%Code for genearting large data- Table 3
-
-mkdir('./data/largedata')
-chdir('./data/largedata');
-n=20000;
-m=100;
-u=10000;
-v=30;
-
-for i =1:1
-chdir('../..');
-datagen2;
-chdir('./data/largedata');
-
-fname=strcat('large',num2str(i),'.txt');
-save(fname,'d', '-ascii')
-end;
-chdir('../..');
