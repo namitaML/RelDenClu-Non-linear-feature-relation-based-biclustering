@@ -8,12 +8,13 @@ function [clubase, cludim]=RelDenClu(d)
     histedges=0:n/histn:n;
     hyp=histcounts(temp1(:),histedges );
     hyp(1)=[];
-    for k=1:(histn-1)
+    for k=1:(histn-2)
         if(hyp(k)>0 & hyp(k+1)>0) break;
         end;
     end;
 
     obsmin=ceil(histedges(k));
+    obsmin=min(obsmin, floor(n/2));
     [impbase, impdim]=bicRMfunc(ixmat,obsmin );
     
     szimp=size(impbase,1);
@@ -23,4 +24,14 @@ function [clubase, cludim]=RelDenClu(d)
     else
     noclu=ceil(obsmin/size(impdim,1))+3;
     [clubase, cludim]=getbiclus(impbase, d, noclu);
+    
+%     sunC=sum(clubase,2);
+%     [temp, cluIds]=sort(sunC, 'descend');
+%     clubase=clubase(cluIds, :);
+%     cludim=cludim(cluIds,:);
     end;
+    
+if(sum(sum(clubase))==0)
+        clubase=[];
+        cludim=[];
+end;    
