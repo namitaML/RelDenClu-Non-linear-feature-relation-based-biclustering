@@ -1,2 +1,2 @@
 # RelDenClu-Non-linear-feature-relation-based-biclustering
-This a biclustering method based on non linear feature depndence. 
+This is a biclustering method named PF-RelDenBi, based on non-linear feature dependence. 
