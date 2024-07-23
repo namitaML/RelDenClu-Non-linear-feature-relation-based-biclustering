@@ -1,4 +1,4 @@
-function [clubase, cludim]=RelDenClu(d)    
+function [clubase, cludim]=pfRelDenBi(d)    
     [n,m]=size(d);
     d=(d-repmat(min(d),n,1))./repmat(range(d), n,1);
 
