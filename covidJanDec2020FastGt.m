@@ -35,7 +35,7 @@ m=temp(2);
 d=(d-repmat(min(d),n,1))./repmat(range(d), n,1);
 tic;
 
-[clubase, cludim]=RelDenClu(d);
+[clubase, cludim]=pfRelDenBi(d);
 
 toc
 cd=logical(cludim);
