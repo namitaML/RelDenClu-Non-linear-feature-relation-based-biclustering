@@ -74,7 +74,8 @@ return;
 
 function [mi]=calcMI(gAd,gSz,n)
 
-if(any(isnan(gSz))) mi=1; return; end;
+if(all(isnan(gSz))) mi=1; return; end;
+if(any(isnan(gSz))) mi=0; return; end;
 cellCount=zeros(gSz);
  for i= 1:n
      cellCount(gAd(i,1),gAd(i,2))=cellCount(gAd(i,1),gAd(i,2))+1;
