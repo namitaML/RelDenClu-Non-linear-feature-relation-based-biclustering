@@ -5,16 +5,14 @@ function [clubase, cludim]=pfRelDenBi(d)
     [ixmat]=preproFast(d);
     temp1=sum(ixmat>0,1);
     histn=ceil(3*log(m*(m-1)/2)/log(2));
-    histedges=0:n/histn:n;
-    hyp=histcounts(temp1(:),histedges );
+    [hyp, cthy]=hist(temp1(:),histn );
+    ctt=(cthy(1:(histn-1))+cthy(2:histn))/2;
     hyp(1)=[];
-    for k=1:(histn-2)
+    for k=1:(histn-1)
         if(hyp(k)>0 & hyp(k+1)>0) break;
         end;
     end;
-
-    obsmin=ceil(histedges(k));
-    obsmin=min(obsmin, floor(n/2));
+    obsmin=ceil(ctt(k-1));
     [impbase, impdim]=bicRMfunc(ixmat,obsmin );
     
     szimp=size(impbase,1);
