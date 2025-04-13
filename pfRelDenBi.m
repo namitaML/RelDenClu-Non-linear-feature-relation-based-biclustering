@@ -23,10 +23,7 @@ function [clubase, cludim]=pfRelDenBi(d)
     noclu=ceil(obsmin/size(impdim,1))+3;
     [clubase, cludim]=getbiclus(impbase, d, noclu);
     
-%     sunC=sum(clubase,2);
-%     [temp, cluIds]=sort(sunC, 'descend');
-%     clubase=clubase(cluIds, :);
-%     cludim=cludim(cluIds,:);
+
     end;
     
 if(sum(sum(clubase))==0)
